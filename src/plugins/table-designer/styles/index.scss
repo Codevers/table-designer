@@ -1,0 +1,563 @@
+$primary-color: #409eff;
+$primary-active-color: #ecf5ff;
+$primary-background-color: #ecf8ff;
+
+*,
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.isModify {
+    .cell {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.el-dialog__header {
+    background-color: #1e57c8;
+    height: 40px;
+    padding: 10px 20px 10px !important;
+}
+
+.el-dialog__title {
+    color: #fff !important;
+    font-size: 14px !important;
+}
+
+.el-table thead {
+    color: #909399;
+    font-weight: 500;
+}
+.avue-crud .el-table th{
+    word-break: break-word;
+    color: rgba(0,0,0,.85);
+    background-color: #fafafa;
+}
+.el-dialog__headerbtn {
+    position: absolute;
+    top: 10px !important;
+    right: 10px !important;
+    padding: 0;
+    background: 0 0;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    font-size: 16px;
+
+    .el-dialog__close {
+        color: #fff !important;
+    }
+}
+
+.table-designer {
+
+
+    ::-webkit-scrollbar {
+        width: 0px !important;
+        height: 0px !important;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0) !important;
+        border-radius: 10px !important;
+        background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px !important;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0) !important;
+        background-color: #fff !important;
+    }
+
+
+
+
+
+    .widget-form-container {
+        height: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        .el-form {
+            height: 100%;
+
+            .el-row {
+                height: 100%;
+            }
+        }
+
+        .widget-form-list {
+            height: 100%;
+            min-height: calc(100% - 45px);
+            padding-bottom: 50px;
+            overflow: hidden;
+            overflow-y: scroll;
+
+            .widget-form-item {
+                min-height: 55px;
+                padding: 5px 10px 18px;
+                margin: 0;
+                position: relative;
+                border-left: 5px solid transparent;
+
+                &.required {
+                    .el-form-item__label::before {
+                        content: "*";
+                        color: #f56c6c;
+                        margin-right: 4px;
+                    }
+                }
+
+                &:after {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    display: block;
+                    z-index: 1001;
+                }
+
+                &:hover {
+                    background: $primary-background-color;
+                    cursor: move;
+                }
+
+                &.active {
+                    border-left: 3px solid $primary-color;
+                    background: $primary-active-color;
+                }
+
+                .widget-action-delete {
+                    position: absolute;
+                    right: 10px;
+                    bottom: -32px;
+                    z-index: 1002;
+                }
+
+                .widget-action-clone {
+                    position: absolute;
+                    right: 50px;
+                    bottom: -32px;
+                    z-index: 1002;
+                }
+            }
+
+            .widget-form-table {
+                position: relative;
+                padding: 2px;
+                float: left;
+                width: 100%;
+
+                &__content {
+                    display: flex;
+                    padding: 10px 5px;
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: hidden;
+                    outline: 1px dashed #ccc;
+                    outline-offset: -1px;
+                    min-height: 103px;
+
+                    .ghost {
+                        background: white;
+                        border-left: 5px solid $primary-color;
+                        box-sizing: border-box;
+                        font-size: 0;
+                        content: "";
+                        overflow: hidden;
+                        padding: 0 !important;
+                        position: relative;
+                        outline: none 0;
+                        height: 100%;
+                        min-height: 90px;
+                        width: 0 !important;
+                        min-width: 0 !important;
+                        margin: 1px 2px 0 2px;
+                    }
+                }
+
+                &__item {
+                    position: relative;
+                    min-width: 33.3%;
+                    width: 33.3%;
+                    padding: 1px;
+                    height: 100%;
+
+                    &.required {
+                        .el-table__header .cell::before {
+                            content: "*";
+                            color: #f56c6c;
+                            margin-right: 4px;
+                        }
+                    }
+
+                    &.active {
+                        outline: 1px solid $primary-color;
+                        outline-offset: -1px;
+                    }
+
+                    &:hover {
+                        outline: 1px solid $primary-color;
+                        outline-offset: -1px;
+                        cursor: move;
+                    }
+
+                    &:after {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        top: 0;
+                        display: block;
+                        content: "";
+                        z-index: 1001;
+                    }
+
+                    .widget-table-action-delete {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        z-index: 1002;
+                    }
+
+                    .widget-table-action-clone {
+                        position: absolute;
+                        right: 30px;
+                        bottom: 0;
+                        z-index: 1002;
+
+                        i {
+                            font-size: 10px;
+                        }
+                    }
+
+                    .el-button--small.is-circle {
+                        padding: 5px;
+                    }
+                }
+
+                &.active {
+                    border-left: 3px solid $primary-color;
+                    background: $primary-active-color;
+                }
+
+                &:hover {
+                    background: $primary-background-color;
+                    cursor: move;
+                }
+
+                .widget-action-delete {
+                    position: absolute;
+                    right: 10px;
+                    bottom: -12px;
+                    z-index: 1001;
+                }
+
+                .widget-action-clear {
+                    position: absolute;
+                    right: 50px;
+                    bottom: -12px;
+                    z-index: 1001;
+                }
+
+                .widget-action-clone {
+                    position: absolute;
+                    right: 90px;
+                    bottom: -12px;
+                    z-index: 1001;
+                }
+            }
+
+            .widget-form-group {
+                position: relative;
+                width: 100%;
+                float: left;
+                padding: 2px;
+
+                &__head {
+                    margin: 10px;
+                }
+
+                &__body {
+                    min-height: 150px;
+                    height: 100%;
+                    outline: 1px dashed #ccc;
+                    outline-offset: -1px;
+                    overflow: hidden;
+                    padding-bottom: 15px;
+
+                    .ghost {
+                        background: white;
+                        border-left: 5px solid $primary-color;
+                        box-sizing: border-box;
+                        font-size: 0;
+                        content: "";
+                        overflow: hidden;
+                        padding: 0 !important;
+                        position: relative;
+                        outline: none 0;
+                        height: 100%;
+                        min-height: 57px;
+                        width: 0 !important;
+                        min-width: 0 !important;
+                        margin: 1px 2px 0 2px;
+                    }
+                }
+
+                &__item {
+                    padding: 10px;
+                    margin: 3px;
+                    position: relative;
+                    border-left: 5px solid transparent;
+                    background: white;
+
+                    &.required {
+                        .el-form-item__label::before {
+                            content: "*";
+                            color: #f56c6c;
+                            margin-right: 4px;
+                        }
+                    }
+
+                    &.active {
+                        outline: 1px solid $primary-color;
+                        outline-offset: -1px;
+                    }
+
+                    &:hover {
+                        outline: 1px solid $primary-color;
+                        outline-offset: -1px;
+                        cursor: move;
+                    }
+
+                    &:after {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        top: 0;
+                        display: block;
+                        content: "";
+                        z-index: 1001;
+                    }
+
+                    &--delete {
+                        position: absolute;
+                        right: 0;
+                        bottom: -24px;
+                        z-index: 1002;
+                    }
+
+                    &--clone {
+                        position: absolute;
+                        right: 34px;
+                        bottom: -24px;
+                        z-index: 1002;
+                    }
+                }
+
+                &.active {
+                    border-left: 3px solid $primary-color;
+                    background: $primary-active-color;
+                }
+
+                &:hover {
+                    background: $primary-background-color;
+                    cursor: move;
+                }
+
+                .widget-action-delete {
+                    position: absolute;
+                    right: 10px;
+                    bottom: -12px;
+                    z-index: 1001;
+                }
+
+                .widget-action-clear {
+                    position: absolute;
+                    right: 50px;
+                    bottom: -12px;
+                    z-index: 1001;
+                }
+
+                .widget-action-clone {
+                    position: absolute;
+                    right: 90px;
+                    bottom: -12px;
+                    z-index: 1001;
+                }
+            }
+
+            .iconfont {
+                font-size: 13px;
+            }
+
+            .el-button--small.is-circle {
+                padding: 7px;
+            }
+        }
+
+        .ghost {
+            background: white;
+            border-top: 5px solid $primary-color;
+            box-sizing: border-box;
+            font-size: 0;
+            content: "";
+            overflow: hidden;
+            padding: 0 !important;
+            position: relative;
+            outline: none 0;
+            height: 0 !important;
+            width: 100%;
+            margin: 2px 0;
+        }
+    }
+
+    .widget-config-container {
+        height: 100%;
+        padding-top: 5px;
+
+        .el-tabs {
+            height: 100%;
+        }
+
+        .el-tabs__header {
+            margin: 0;
+            height: 45px;
+            background: white;
+            z-index: 1000;
+        }
+
+        .el-tabs__content {
+            height: calc(100% - 45px);
+            overflow-y: scroll;
+        }
+
+        .widget-config {
+            .el-tabs__header {
+                position: relative;
+                display: block;
+                top: 0;
+                margin: 0;
+            }
+
+            .el-tabs__content {
+                margin-top: 0;
+            }
+
+            .ghost {
+                background: #fff;
+                border: 1px dashed $primary-color;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    margin-left: 0;
+                    line-height: 32px;
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+
+                    .ghost {
+                        list-style: none;
+                        font-size: 0;
+                        height: 35px;
+                    }
+                }
+            }
+        }
+
+        .avue-group__item {
+            padding: 0;
+        }
+    }
+
+    .el-container {
+        height: 100%;
+
+        .el-main {
+            height: calc(100% - 45px);
+        }
+
+        .el-aside {
+            background: #fff;
+        }
+    }
+
+    .danger {
+        color: #f56c6c;
+    }
+
+    .warning {
+        color: #e6a23c;
+    }
+
+    .el-input-number.is-controls-right {
+        .el-input-number__decrease {
+            border-left: none;
+        }
+
+        .el-input-number__increase {
+            border-left: none;
+            border-bottom: none;
+        }
+    }
+
+    .el-date-editor,
+    .el-cascader,
+    .el-select,
+    .el-input-number {
+        width: 100%;
+    }
+}
+
+.drawer-foot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    background-color: #fff;
+
+    button {
+        width: 50%;
+    }
+
+    &>span {
+        display: inline-block;
+        width: 50%;
+
+        button {
+            width: 100%;
+        }
+    }
+}
+
+.preview-form {
+    overflow-y: scroll;
+    height: 83vh;
+}
+
+.popper-bo {
+    .el-alert {
+        margin-bottom: 10px;
+    }
+}
+
+.el-drawer__wrapper {
+    :focus {
+        outline: 0;
+    }
+}
